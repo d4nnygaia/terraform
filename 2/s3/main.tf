@@ -8,7 +8,16 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
-  access_key = "fake"
-  secret_key = "fake"
+  region = var.region
+  access_key = var.acces_key
+  secret_key = var.secret_key
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = var.nombres3
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
