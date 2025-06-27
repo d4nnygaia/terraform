@@ -17,3 +17,12 @@ variable "secret_key"{
     type = string
     default = "fake"
 }
+
+variable "tags"{
+    description = "value"
+    type = map(string)
+    default = {
+      Name = "My bucket"
+      Environment = "Dev"
+    }
+}
